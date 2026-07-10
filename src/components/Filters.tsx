@@ -16,7 +16,6 @@ export const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
   const [priority, setPriority] = useState<Priority | 'all'>('all');
   const [assignee, setAssignee] = useState<string | 'all'>('all');
 
-  // Derive unique assignees from tasks for the dropdown
   const uniqueAssignees = Array.from(new Set(state.tasks.map(t => t.assignee))).filter(Boolean);
 
   useEffect(() => {

@@ -1,6 +1,5 @@
 import { Task, Priority, Status } from '../types/task';
 
-// API response type
 interface ApiTodo {
   userId: number;
   id: number;
@@ -20,14 +19,13 @@ export const fetchInitialTasks = async (): Promise<Task[]> => {
     const data: ApiTodo[] = await response.json();
     
     return data.map((todo) => {
-      // Deterministically map to our task shape
       const priority = PRIORITIES[todo.id % PRIORITIES.length];
       const assignee = ASSIGNEES[todo.id % ASSIGNEES.length];
       const status: Status = todo.completed ? 'Done' : 'To Do';
       
       return {
         id: todo.id.toString(),
-        title: todo.title.substring(0, 80), // Ensure it respects the 80 chars max
+        title: todo.title.substring(0, 80),
         description: `Seed task from API (User ID: ${todo.userId})`,
         status,
         priority,

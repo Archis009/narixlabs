@@ -13,15 +13,12 @@ export const Board: React.FC<BoardProps> = ({ filters, onEditTask }) => {
 
   const filteredTasks = useMemo(() => {
     return state.tasks.filter(task => {
-      // 1. Search Query
       if (filters.searchQuery && !task.title.toLowerCase().includes(filters.searchQuery.toLowerCase())) {
         return false;
       }
-      // 2. Priority Filter
       if (filters.priority !== 'all' && task.priority !== filters.priority) {
         return false;
       }
-      // 3. Assignee Filter
       if (filters.assignee !== 'all' && task.assignee !== filters.assignee) {
         return false;
       }

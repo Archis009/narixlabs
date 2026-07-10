@@ -71,7 +71,6 @@ const LOCAL_STORAGE_KEY = 'narixlabs_sprint_board_tasks';
 export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(taskReducer, initialState);
 
-  // Load from local storage or API on mount
   useEffect(() => {
     const loadData = async () => {
       dispatch({ type: 'INIT_START' });
@@ -84,11 +83,9 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           return;
         } catch (e) {
           console.error('Failed to parse local storage', e);
-          // If parse fails, proceed to fetch
         }
       }
 
-      // No valid local storage data, fetch from API
       try {
         const initialTasks = await fetchInitialTasks();
         dispatch({ type: 'INIT_SUCCESS', payload: initialTasks });
@@ -100,7 +97,6 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     loadData();
   }, []);
 
-  // Persist to local storage whenever tasks change, but only if initialized to avoid overwriting with empty array on first render
   useEffect(() => {
     if (state.isInitialized) {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state.tasks));
