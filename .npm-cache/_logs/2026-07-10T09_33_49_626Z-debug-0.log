@@ -1,0 +1,19 @@
+0 verbose cli /Users/archis009/.nvm/versions/node/v24.4.1/bin/node /Users/archis009/.nvm/versions/node/v24.4.1/bin/npm
+1 info using npm@11.4.2
+2 info using node@v24.4.1
+3 silly config load:file:/Users/archis009/.nvm/versions/node/v24.4.1/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/archis009/Desktop/narixlabs-frontend/.npmrc
+5 silly config load:file:/Users/archis009/.npmrc
+6 silly config load:file:/Users/archis009/.nvm/versions/node/v24.4.1/etc/npmrc
+7 verbose title npm view lucide-react description dist-tags.latest homepage version time
+8 verbose argv "view" "--json" "--" "lucide-react" "description" "dist-tags.latest" "homepage" "version" "time"
+9 verbose logfile logs-max:10 dir:/Users/archis009/Desktop/narixlabs-frontend/.npm-cache/_logs/2026-07-10T09_33_49_626Z-
+10 verbose logfile /Users/archis009/Desktop/narixlabs-frontend/.npm-cache/_logs/2026-07-10T09_33_49_626Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/lucide-react 191ms (cache miss)
+13 verbose cwd /Users/archis009/Desktop/narixlabs-frontend
+14 verbose os Darwin 25.5.0
+15 verbose node v24.4.1
+16 verbose npm  v11.4.2
+17 verbose exit 0
+18 info ok
