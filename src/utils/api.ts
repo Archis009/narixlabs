@@ -9,6 +9,20 @@ interface ApiTodo {
 
 const PRIORITIES: Priority[] = ['low', 'medium', 'high'];
 const ASSIGNEES = ['Alice', 'Bob', 'Charlie', 'Diana'];
+const ENGLISH_TITLES = [
+  'Design the landing page mockup',
+  'Implement authentication flow',
+  'Fix the navigation bar responsiveness',
+  'Write unit tests for the Board component',
+  'Optimize images on the home page',
+  'Setup CI/CD pipeline',
+  'Refactor state management to Context API',
+  'Update user profile settings page',
+  'Integrate Stripe for payments',
+  'Debug the memory leak in production',
+  'Add dark mode support',
+  'Write documentation for the new API endpoint'
+];
 
 export const fetchInitialTasks = async (): Promise<Task[]> => {
   try {
@@ -25,7 +39,7 @@ export const fetchInitialTasks = async (): Promise<Task[]> => {
       
       return {
         id: todo.id.toString(),
-        title: todo.title.substring(0, 80),
+        title: ENGLISH_TITLES[(todo.id - 1) % ENGLISH_TITLES.length],
         description: `Seed task from API (User ID: ${todo.userId})`,
         status,
         priority,
