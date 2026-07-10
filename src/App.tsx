@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { TaskProvider } from './context/TaskContext'
 import { Board } from './components/Board'
 import { Filters } from './components/Filters'
